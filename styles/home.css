@@ -25,3 +25,6 @@
     position: absolute;
     z-index: -1;
 }
+.results {
+    align-items: center;
+}
