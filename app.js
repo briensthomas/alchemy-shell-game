@@ -36,6 +36,7 @@ button2.addEventListener('click', () => {
     console.log('clicked button 2');
 
     const randomShell = Math.ceil(Math.random() * 3);
+    console.log('the random shell is ', randomShell);
 // is randomShell = 2, increase the win counter
     if (randomShell === 1) {
         incorrect++;
@@ -43,6 +44,24 @@ button2.addEventListener('click', () => {
         correct++;
     } else {
         incorrect++;
+    }
+    correctSpan.textContent = correct;
+    incorrectSpan.textContent = incorrect;
+    totalSpan.textContent = correct + incorrect;
+});
+
+button3.addEventListener('click', () => {
+    console.log('clicked button 3');
+
+    const randomShell = Math.ceil(Math.random () * 3);
+    console.log('the random shell is ', randomShell);
+    // if randomShell = 3, increase correct guess counter
+    if (randomShell === 1) {
+        incorrect++;
+    } else if (randomShell === 2) {
+        incorrect++;
+    } else {
+        correct++;
     }
     correctSpan.textContent = correct;
     incorrectSpan.textContent = incorrect;
