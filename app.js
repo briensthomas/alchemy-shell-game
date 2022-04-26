@@ -6,6 +6,12 @@ const shell1 = document.getElementById('shell-1');
 const shell2 = document.getElementById('shell-2');
 const shell3 = document.getElementById('shell-3');
 
+// create a timeout function to be called with a single line
+// const timer = setTimeout(() => {
+//     shell1.classList.remove('reveal');
+//     shell2.classList.remove('reveal');
+//     shell3.classList.remove('reveal');
+// }, 3000);
 const correctSpan = document.getElementById('correctSpan');
 const incorrectSpan = document.getElementById('incorrectSpan');
 const totalSpan = document.getElementById('totalSpan');
@@ -14,6 +20,7 @@ let correct = 0;
 let incorrect = 0;
 
 button1.addEventListener('click', () => {
+// reset all shells to default view    
     shell1.classList.remove('reveal');
     shell2.classList.remove('reveal');
     shell3.classList.remove('reveal');
@@ -77,13 +84,13 @@ button3.addEventListener('click', () => {
     shell3.classList.remove('reveal');
 
     const randomShell = Math.ceil(Math.random () * 3);
-    // if randomShell = 3, increase correct guess counter
     if (randomShell === 1) {
         shell1.classList.add('reveal');
         incorrect++;
     } else if (randomShell === 2) {
         shell2.classList.add('reveal');
         incorrect++;
+      // if randomShell = 3, increase correct guess counter
     } else {
         shell3.classList.add('reveal');
         correct++;

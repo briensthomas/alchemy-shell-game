@@ -31,5 +31,6 @@
 }
 
 .reveal {
+    transition: 0.5s;
     transform: translateY(-125px);
 }
