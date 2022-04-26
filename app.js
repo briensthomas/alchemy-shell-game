@@ -36,16 +36,20 @@ button1.addEventListener('click', () => {
 });
 
 button2.addEventListener('click', () => {
+    shell1.classList.remove('reveal');
+    shell2.classList.remove('reveal');
+    shell3.classList.remove('reveal');
+
     const randomShell = Math.ceil(Math.random() * 3);
 // is randomShell = 2, increase the win counter
     if (randomShell === 1) {
-        shell1.classList.add('hidden');
+        shell1.classList.add('reveal');
         incorrect++;
     } else if (randomShell === 2) {
-        shell2.classList.add('hidden');
+        shell2.classList.add('reveal');
         correct++;
     } else {
-        shell3.classList.add('hidden');
+        shell3.classList.add('reveal');
         incorrect++;
     }
     correctSpan.textContent = correct;
@@ -54,16 +58,20 @@ button2.addEventListener('click', () => {
 });
 
 button3.addEventListener('click', () => {
+    shell1.classList.remove('reveal');
+    shell2.classList.remove('reveal');
+    shell3.classList.remove('reveal');
+
     const randomShell = Math.ceil(Math.random () * 3);
     // if randomShell = 3, increase correct guess counter
     if (randomShell === 1) {
-        shell1.classList.add('hidden');
+        shell1.classList.add('reveal');
         incorrect++;
     } else if (randomShell === 2) {
-        shell2.classList.add('hidden');
+        shell2.classList.add('reveal');
         incorrect++;
     } else {
-        shell3.classList.add('hidden');
+        shell3.classList.add('reveal');
         correct++;
     }
     correctSpan.textContent = correct;
