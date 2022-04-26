@@ -6,14 +6,14 @@
 }
 
 .shell {
-    width: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .shell img {
-    max-width: 100%;
+    width: 300px;
 }
 
 .red-ball {
@@ -32,6 +32,6 @@
 }
 
 .reveal {
-    transition: 0.5s;
+    transition: 0.1s;
     transform: translateY(-125px);
 }
