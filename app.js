@@ -7,11 +7,19 @@ const shell2 = document.getElementById('shell-2');
 const shell3 = document.getElementById('shell-3');
 
 // create a timeout function to be called with a single line
-// const timer = setTimeout(() => {
-//     shell1.classList.remove('reveal');
-//     shell2.classList.remove('reveal');
-//     shell3.classList.remove('reveal');
-// }, 3000);
+// function timer = setTimeout(() => {
+//     shell1.classList.remove('reveal').delay(1000);
+//     shell2.classList.remove('reveal').delay(1000);
+//     shell3.classList.remove('reveal').delay(1000);
+// }, 2000);
+
+//reset function to remove reveals
+function classRemove() { 
+    shell1.classList.remove('reveal');
+    shell2.classList.remove('reveal');
+    shell3.classList.remove('reveal');
+}
+
 const correctSpan = document.getElementById('correctSpan');
 const incorrectSpan = document.getElementById('incorrectSpan');
 const totalSpan = document.getElementById('totalSpan');
@@ -21,10 +29,8 @@ let incorrect = 0;
 
 button1.addEventListener('click', () => {
 // reset all shells to default view    
-    shell1.classList.remove('reveal');
-    shell2.classList.remove('reveal');
-    shell3.classList.remove('reveal');
-
+    classRemove();
+// call random number 1-3, assigned as randomShell variable
     const randomShell = Math.ceil(Math.random() * 3);
 // if randomShell = 1, increase the correct counter
     if (randomShell === 1) {
@@ -52,9 +58,7 @@ button1.addEventListener('click', () => {
 });
 
 button2.addEventListener('click', () => {
-    shell1.classList.remove('reveal');
-    shell2.classList.remove('reveal');
-    shell3.classList.remove('reveal');
+    classRemove();
 
     const randomShell = Math.ceil(Math.random() * 3);
 // if randomShell = 2, increase the correct counter
@@ -79,9 +83,7 @@ button2.addEventListener('click', () => {
 });
 
 button3.addEventListener('click', () => {
-    shell1.classList.remove('reveal');
-    shell2.classList.remove('reveal');
-    shell3.classList.remove('reveal');
+    classRemove();
 
     const randomShell = Math.ceil(Math.random () * 3);
     if (randomShell === 1) {
