@@ -30,6 +30,11 @@ button1.addEventListener('click', () => {
         shell3.classList.add('reveal');
         incorrect++;
     }
+    setTimeout(() => {
+        shell1.classList.remove('reveal');
+        shell2.classList.remove('reveal');
+        shell3.classList.remove('reveal');
+    }, 3000);
     correctSpan.textContent = correct;
     incorrectSpan.textContent = incorrect;
     totalSpan.textContent = correct + incorrect;
@@ -41,7 +46,7 @@ button2.addEventListener('click', () => {
     shell3.classList.remove('reveal');
 
     const randomShell = Math.ceil(Math.random() * 3);
-// is randomShell = 2, increase the win counter
+// if randomShell = 2, increase the win counter
     if (randomShell === 1) {
         shell1.classList.add('reveal');
         incorrect++;
@@ -52,6 +57,11 @@ button2.addEventListener('click', () => {
         shell3.classList.add('reveal');
         incorrect++;
     }
+    setTimeout(() => {
+        shell1.classList.remove('reveal');
+        shell2.classList.remove('reveal');
+        shell3.classList.remove('reveal');
+    }, 3000);
     correctSpan.textContent = correct;
     incorrectSpan.textContent = incorrect;
     totalSpan.textContent = correct + incorrect;
@@ -74,6 +84,11 @@ button3.addEventListener('click', () => {
         shell3.classList.add('reveal');
         correct++;
     }
+    setTimeout(() => {
+        shell1.classList.remove('reveal');
+        shell2.classList.remove('reveal');
+        shell3.classList.remove('reveal');
+    }, 3000);
     correctSpan.textContent = correct;
     incorrectSpan.textContent = incorrect;
     totalSpan.textContent = correct + incorrect;
