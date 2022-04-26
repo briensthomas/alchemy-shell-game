@@ -12,13 +12,14 @@
     align-items: center;
 }
 
-.shell-img {
-    width: 100%;
+.shell img {
+    max-width: 100%;
 }
+
 .red-ball {
     height: 50px;
     width: 50px;
-    top: 250px;
+    top: 260px;
     background-color: red;
     border-radius: 50%;
     border: 2px solid black;
