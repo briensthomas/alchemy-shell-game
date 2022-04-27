@@ -7,14 +7,14 @@ const shell2 = document.getElementById('shell-2');
 const shell3 = document.getElementById('shell-3');
 
 // create a timeout function to be called with a single line
-// function timer = setTimeout(() => {
-//     shell1.classList.remove('reveal').delay(1000);
-//     shell2.classList.remove('reveal').delay(1000);
-//     shell3.classList.remove('reveal').delay(1000);
-// }, 2000);
+const timer = setTimeout(reset(() => {
+    shell1.classList.remove('reveal');
+    shell2.classList.remove('reveal');
+    shell3.classList.remove('reveal');
+}, 2000));
 
 //reset function to remove reveals
-function classRemove() { 
+function reset() { 
     shell1.classList.remove('reveal');
     shell2.classList.remove('reveal');
     shell3.classList.remove('reveal');
@@ -29,7 +29,7 @@ let incorrect = 0;
 
 button1.addEventListener('click', () => {
 // reset all shells to default view    
-    classRemove();
+    reset();
 // call random number 1-3, assigned as randomShell variable
     const randomShell = Math.ceil(Math.random() * 3);
 // if randomShell = 1, increase the correct counter
@@ -44,12 +44,8 @@ button1.addEventListener('click', () => {
         shell3.classList.add('reveal');
         incorrect++;
     }
-//sets counter to "hide" the ball after 3 seconds
-    setTimeout(() => {
-        shell1.classList.remove('reveal');
-        shell2.classList.remove('reveal');
-        shell3.classList.remove('reveal');
-    }, 3000);
+//sets counter to "hide" the ball after 2 seconds
+    timer;
 // updates the results counter based on the increment
 //totals are a derived state based on the other numbers
     correctSpan.textContent = correct;
@@ -58,7 +54,7 @@ button1.addEventListener('click', () => {
 });
 
 button2.addEventListener('click', () => {
-    classRemove();
+    reset();
 
     const randomShell = Math.ceil(Math.random() * 3);
 // if randomShell = 2, increase the correct counter
@@ -72,18 +68,14 @@ button2.addEventListener('click', () => {
         shell3.classList.add('reveal');
         incorrect++;
     }
-    setTimeout(() => {
-        shell1.classList.remove('reveal');
-        shell2.classList.remove('reveal');
-        shell3.classList.remove('reveal');
-    }, 3000);
+    timer;
     correctSpan.textContent = correct;
     incorrectSpan.textContent = incorrect;
     totalSpan.textContent = correct + incorrect;
 });
 
 button3.addEventListener('click', () => {
-    classRemove();
+    reset();
 
     const randomShell = Math.ceil(Math.random () * 3);
     if (randomShell === 1) {
@@ -97,11 +89,7 @@ button3.addEventListener('click', () => {
         shell3.classList.add('reveal');
         correct++;
     }
-    setTimeout(() => {
-        shell1.classList.remove('reveal');
-        shell2.classList.remove('reveal');
-        shell3.classList.remove('reveal');
-    }, 3000);
+    timer;
     correctSpan.textContent = correct;
     incorrectSpan.textContent = incorrect;
     totalSpan.textContent = correct + incorrect;
